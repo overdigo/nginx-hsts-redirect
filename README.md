@@ -4,6 +4,7 @@ Redirect correto para NginX HSTS
 Esse primeiro exemplo é para sites WWW
 #### Redirect http com www para https
 Nesse caso vai existir apenas 1 redrect direto para o site https://www.exemplo.com.br.
+
 Entra http://www.exemplo.com.br e sai https://www.exemplo.com.br
 ```sh
 server {
@@ -15,6 +16,7 @@ server {
 ```
 #### Redirect http sem www para https
 Nesse caso o url vai ser redirecionado para https://exemplo.com.br
+
 Entra http://exemplo.com.br e sai https://exemplo.com.br
 ```sh
 server {
@@ -26,7 +28,9 @@ server {
 ```
 #### Redirect https sem www para https com www
 Nesse redirect o url https sem www vai receber novo redirect para https com www - redirecionando para https://www.exemplo.com.br
+
 Para funcionar corretamente é preciso conter os certificados e o header HSTS
+
 Entra https://exemplo.com.br e sai https://www.exemplo.com.br
 ```sh
 server {
@@ -110,6 +114,8 @@ Envie seu site como HSTS em: [https://hstspreload.org/](https://hstspreload.org/
 
 ![alt text](https://raw.githubusercontent.com/overdigo/nginx-hsts-redirect/master/dominio-hsts-teste.jpg "nginx HSTS redirect www")
 
+---
+
 ## Redirect para sites não WWW
 Esse exemplo é para sites não WWW
 
@@ -146,3 +152,8 @@ server {
     add_header Strict-Transport-Security "max-age=31536000; includeSubdomains; preload";
 }
 ```
+
+
+
+
+
