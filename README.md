@@ -1,5 +1,7 @@
 # NginX HSTS redirect
-Redirect correto para NginX HSTS
+Veja como configura o redirecionamento do Nginx para que o site seja aprovado para entrar para a lista HSTS
+O segredo do redirect no nginx para ser aceito como HSTS é redirecionar primeiro para HTTPS e depois redirecionar novamente para adicionar ou remover o www
+
 ## Redirect para sites WWW
 Esse primeiro exemplo é para sites WWW
 #### Redirect http com www para https
