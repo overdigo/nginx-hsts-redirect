@@ -37,9 +37,9 @@ Entra https://exemplo.com.br e sai https://www.exemplo.com.br
 ```sh
 server {
     server_name exemplo.com.br;
-    listen 443 ssl http2;
-    listen [::]:443 ssl http2;
-    ssl on;
+    listen 443 ssl;
+    listen [::]:443 ssl;
+    http2 on;
     return 301 $scheme://www.exemplo.com.br$request_uri;
     ssl_certificate /etc/letsencrypt/live/exemplo.com.br/fullchain.pem;
     ssl_certificate_key /etc/letsencrypt/live/exemplo.com.br/privkey.pem;
@@ -52,8 +52,9 @@ Entra https://www.exemplo.com.br e não faz redirect
 ```sh
 server {
     server_name www.exemplo.com.br;
-    listen 443 ssl http2;
-    listen [::]:443 ssl http2;
+    listen 443 ssl;
+    listen [::]:443 ssl;
+    http2 on;
     ssl_certificate /etc/letsencrypt/live/exemplo.com.br/fullchain.pem;
     ssl_certificate_key /etc/letsencrypt/live/exemplo.com.br/privkey.pem;
     add_header Strict-Transport-Security "max-age=31536000; includeSubdomains; preload";
@@ -78,9 +79,9 @@ server {
 }
 server {
     server_name exemplo.com.br;
-    listen 443 ssl http2;
-    listen [::]:443 ssl http2;
-    ssl on;
+    listen 443 ssl;
+    listen [::]:443 ssl;
+    http2 on;
     return 301 $scheme://www.exemplo.com.br$request_uri;
     ssl_certificate /etc/letsencrypt/live/exemplo.com.br/fullchain.pem;
     ssl_certificate_key /etc/letsencrypt/live/exemplo.com.br/privkey.pem;
@@ -88,9 +89,9 @@ server {
 }
 server {
     server_name www.exemplo.com.br;
-    listen 443 ssl http2;
-    listen [::]:443 ssl http2;
-    ssl on;
+    listen 443 ssl;
+    listen [::]:443 ssl;
+    http2 on;
     ssl_certificate /etc/letsencrypt/live/exemplo.com.br/fullchain.pem;
     ssl_certificate_key /etc/letsencrypt/live/exemplo.com.br/privkey.pem;
     add_header Strict-Transport-Security "max-age=31536000; includeSubdomains; preload";
